@@ -126,7 +126,10 @@ root/
 └── UD_English-EWT               # Thư mục chứa dữ liệu test
 
 ```
-
+## Giải thích kết quả chạy: Với 1 một đoạn văn bản, chương trình sẽ lần lượt duyệt qua từng kí tự, nhưng trước đó thì tạo 1 String s rỗng để lưu từ,
+nếu kí tự duyệt qua là chữ cái hoặc số thì thêm vào String s kia, còn không thì kiểm tra xem s có rỗng không, r thêm vào tokens và khởi tạo lại s,
+rồi kiểm tra kí tự hiện tại: nếu là dấu ' ' thì bỏ qua, còn nếu là các kí tự đặc biệt thì thêm vào tokens. Sau khi hết vòng lặp, kiểm tra lại chuỗi s,
+nếu s không rỗng, tức là còn token, thì sẽ thêm vào tokens, do trong vòng lặp chưa thêm token đó
 ---
 
 ## Ví dụ chạy
@@ -180,3 +183,4 @@ RegexTokenizer Output (first 20 tokens): ['Al', '-', 'Zaman', ':', 'American', '
 - re
 
 ## 1 số nguồn tham khảo: ChatGPT, thuật toán tách từ cơ bản từ Lập trình cơ bản
+
