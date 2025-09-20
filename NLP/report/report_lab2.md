@@ -116,7 +116,13 @@ root/
 └── UD_English-EWT               # Thư mục chứa dữ liệu test
 
 ```
-
+##Giải thích kết quả: 
+    + Với hàm fit: ta chỉ cần tạo set rỗng, rồi duyệt qua từng văn bản trong corpus, sau đó lần lượt tokenize văn bản đó, rồi thêm vào set, 
+    cuối cùng thì thêm các phần tử của set vào từ điển
+    + Với hàm transform: Đầu tiên kểm tra xem từ điển có rỗng không, nếu không thì tạo 1 danh sách rỗng chứa các vecto, duyệt qua từng đoạn văn trong document,
+    tạo 1 vecto 0 có độ dài = số từ trong từ điển, sau đó tokenize đoạn văn đó, tiếp theo lại duyệt qua từng token trong list tokens của đoạn văn kia,
+    nếu có trong từ điển thì giá trị thứ nguyên của vecto rỗng kia tại vị trí index của token đó sẽ tăng lên 1, duyệt xong thì thêm vecto đó vào list vecto,
+    rồi cuối cùng trả về list vecto
 ---
 
 ## Ví dụ chạy
@@ -235,3 +241,4 @@ Doc 50: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 - os
 
 ## 1 số nguồn tham khảo: ChatGPT, thuật toán tách từ cơ bản từ Lập trình cơ bản
+
